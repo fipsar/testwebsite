@@ -54,6 +54,25 @@
   
   <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-FDCJ02W8B5"></script>
+  <script>
+const openBtn = document.getElementById("openLightbox");
+const closeBtn = document.getElementById("closeLightbox");
+const lightbox = document.getElementById("vimeoLightbox");
+const iframe = document.getElementById("vimeoPlayer");
+
+const vimeoID = "YOUR_VIMEO_ID";
+
+openBtn.addEventListener("click", () => {
+  iframe.src = `https://player.vimeo.com/video/${vimeoID}?autoplay=1`;
+  lightbox.style.display = "block";
+});
+
+closeBtn.addEventListener("click", () => {
+  iframe.src = ""; // Stops the video
+  lightbox.style.display = "none";
+});
+</script>
+
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -251,6 +270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </body>
 </html>
+
 
 
 
